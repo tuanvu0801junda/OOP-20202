@@ -1,7 +1,7 @@
 # OOP-20202
 Object-oriented Programming Class in RHUST, semester 20202
 
-My lecturer: Ms. Bui Thi Mai Anh from SOICT,　RHUST
+My lecturer: Ms. Bui Thi Mai Anh from SOICT, RHUST
 
 Contains my code in each week: week1, week2, ...
 
