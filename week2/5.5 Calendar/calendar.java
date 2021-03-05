@@ -55,29 +55,12 @@ public class calendar {
                 if(month == month_31[i]) {
                     System.out.println("31 days");
                     break;
-                }
-            }
+                }}
             for (int i=0;i<month_30.length;i++){
                 if(month == month_30[i]) {
                     System.out.println("30 days");
                     break;
-                }
-            }
+                }}
         }
     }
-    /*
-    public static int index_of_month(String[] arr, String str){
-        int index = 0;
-        for(int i=0;i<arr.length;i++){
-            System.out.println(index);
-            if(str == arr[i]) {
-                index = i+1;
-                System.out.println("index = "+index);
-                break;
-            }
-        }
-        return index;
-    }
-
-     */
 }
