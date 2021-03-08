@@ -20,9 +20,9 @@ public class matrix_test {
             matrix mtx = new matrix();
             mtx.setColumn(column);
             mtx.setRow(row);
-            mtx.print_matrix(matrix1,row,column,"matrix1");
-            mtx.print_matrix(matrix2,row,column,"matrix2");
-            mtx.print_add_result(matrix1,matrix2,row,column);
+            mtx.print_matrix(matrix1,"matrix1");
+            mtx.print_matrix(matrix2,"matrix2");
+            mtx.print_add_result(matrix1,matrix2);
         }
     }
 

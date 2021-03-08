@@ -5,7 +5,7 @@ public class matrix {
     public void setRow(int row){ this.row = row; }
     public void setColumn(int column){this.column = column;}
 
-    public void print_add_result(int[][] arr1, int[][] arr2, int row, int column){
+    public void print_add_result(int[][] arr1, int[][] arr2){
         System.out.println("\nThe result of 2 matrix addition");
         for (int i=0;i<row;i++){
             for(int k=0;k<column;k++){
@@ -16,7 +16,7 @@ public class matrix {
         }
     }
 
-    public void print_matrix(int[][] arr, int row, int column, String name){
+    public void print_matrix(int[][] arr, String name){
         System.out.println("\nThe "+name);
         for (int i=0;i<row;i++){
             for(int k=0;k<column;k++){
