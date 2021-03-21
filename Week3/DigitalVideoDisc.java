@@ -23,13 +23,12 @@ public class DigitalVideoDisc {
         this.director = director;   this.length = length;
         this.cost = cost;
     }
-    /*
+
     public void setTitle(String title) { this.title = title; }
     public void setCategory(String category) { this.category = category; }
     public void setDirector(String director) { this.director = director; }
     public void setLength(int length) { this.length = length; }
     public void setCost(float cost) { this.cost = cost; }
-     */
 
     public String getTitle() { return title; }
     public String getCategory() { return category; }
@@ -37,13 +36,6 @@ public class DigitalVideoDisc {
     public int getLength() { return length; }
     public float getCost() { return cost; }
 
-    public int Equals(DigitalVideoDisc disc){
-        if(disc.title.equals(this.title)){
-            if(this.category.equals(disc.category)) {
-                if (this.director.equals(disc.director)) {
-                    if (this.length == disc.length && this.cost == disc.cost) { return 1; } } } }
-        return 0;
-    }
 
     //Alt + insert -->  Hiển thị hộp thoại "Generator" --> getter and setter
 

@@ -10,13 +10,13 @@ public class Order {
     public void setQtyOrdered(int qtyOrdered) { this.qtyOrdered = qtyOrdered; }
 
     public void addDigitalVideoDisc(DigitalVideoDisc disc){
-        if(qtyOrdered >= MAX_ORDERED_NUMBER - 1) {
+        if(qtyOrdered > MAX_ORDERED_NUMBER) { //added by 1 (from bottom)
             System.out.println("List of Digital Disk is ALREADY FULL!");
         }
         else{
+            if(qtyOrdered == MAX_ORDERED_NUMBER -1) System.out.println("Your Digital List is ALMOST FULL. Only 1 more to add.");
             itemsOrdered[qtyOrdered++] = disc;
             System.out.println("Disc " + "\""+disc.getTitle()+"\"" + " has been added ^^");
-            if(qtyOrdered == MAX_ORDERED_NUMBER -2) System.out.println("Your Digital List is ALMOST FULL. Only 1 more to add.");
         }
     }
 
@@ -26,7 +26,7 @@ public class Order {
         }
         else{
             int control = 0;
-            for(int i=0;i<qtyOrdered;i++){ if(disc.Equals(itemsOrdered[i]) == 1) control = i; }
+            for(int i=0;i<qtyOrdered;i++){ if(disc == itemsOrdered[i]) control = i; }
             if(control != 0){
                 for(int i=control;i<qtyOrdered;i++){
                     itemsOrdered[i] = itemsOrdered[i+1];

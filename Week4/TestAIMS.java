@@ -43,9 +43,11 @@ public class TestAIMS {
         odr.addDigitalVideoDisc(my_disc1,my_disc2);
         System.out.println("\nTotal cost of list (4th time): "+odr.totalCost());
 
-        odr.addDigitalVideoDisc(2);
+        odr.removeDigitalVideoDisc(my_disc1);
+        System.out.println("\nTotal cost of list (5th time): "+odr.totalCost());
 
-
+        odr.setDateOrdered(20,11,2022);
+        odr.printOrder();
 
 
 
