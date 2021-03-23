@@ -16,6 +16,10 @@ public class Order {
         //check if nbOrder <= MAX_LIMITED_ORDERED
     }
 
+    public static int getNbOrder() {
+        return nbOrder;
+    }
+
     public int getQtyOrdered() { return qtyOrdered; }
 
     public void setDateOrdered(int day, int month, int year){
@@ -132,17 +136,22 @@ public class Order {
         }
     }
 
-    public void printOrder(){
-        System.out.println("***********************Order***********************");
-        System.out.print("Date: ");
-        dateOrdered.print();
-        System.out.println("Ordered item: ");
+    public String DVDOrderedString(){
+        String DVDFinal = "";
         for(int i=0;i<qtyOrdered;i++){
-            System.out.println((i+1)+". DVD - "+itemsOrdered[i].getTitle()+" - "+itemsOrdered[i].getCategory()+" - "+itemsOrdered[i].getDirector()+
-                    " - "+itemsOrdered[i].getLength()+": "+itemsOrdered[i].getCost()+ " $");
+            DVDFinal += (i+1)+". DVD - "+itemsOrdered[i].getTitle()+" - "+itemsOrdered[i].getCategory()+" - "+itemsOrdered[i].getDirector()+
+                    " - "+itemsOrdered[i].getLength()+": "+itemsOrdered[i].getCost()+ " $\n";
         }
+        return DVDFinal;
+    }
+    // Return String better than S.OUT ! (for print FILE/BUFFER/USER INTERFACE) --> more OOP styled !
+
+    public void printOrder(){
+        System.out.println("\n***********************Order***********************");
+        System.out.print("Date: "+dateOrdered.OrderDateToString());
+        System.out.println("Ordered DVD item: \n"+DVDOrderedString());
         System.out.println("Total cost: "+totalCost()+" $");
-        System.out.println("***************************************************");
+        System.out.println("***************************************************\n");
     }
 
 }

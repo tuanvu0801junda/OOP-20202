@@ -6,7 +6,7 @@ import static Week4.DateUtils.printDates;
 public class DateTest {
     public static void main(String[] args) {
         MyDate md = new MyDate(23,3,2013);
-        md.print();
+        System.out.println(md.OrderDateToString());
         md.printMyFormat();
 
         MyDate md1 = new MyDate(28,9,2008);
@@ -30,7 +30,8 @@ public class DateTest {
         System.out.println("\nAfter");
         printDates(mds);
 
-
+        MyDate mdmd = new MyDate("nineteenth","January","nineteen ninety seven");
+        System.out.println("\n"+mdmd.getDay() + " " + mdmd.getMonth() + " " + mdmd.getYear());
 
 
     }

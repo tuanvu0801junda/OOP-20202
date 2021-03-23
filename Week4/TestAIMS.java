@@ -1,6 +1,9 @@
 package Week4;
 import Week3.DigitalVideoDisc;
 
+import static Week4.Order.MAX_LIMITED_ORDERED;
+import static Week4.Order.getNbOrder;
+
 public class TestAIMS {
     public static void main(String[] args) {
         Order odr = new Order();
@@ -49,6 +52,40 @@ public class TestAIMS {
         odr.setDateOrdered(20,11,2022);
         odr.printOrder();
 
+        if(getNbOrder() >= MAX_LIMITED_ORDERED){
+            System.out.println("Cannot create another order!");
+        }
+        else{
+            Order odr1 = new Order();
+            Order odr2 = new Order();
+            Order odr3 = new Order();
+            Order odr4 = new Order();
+
+            odr1.setDateOrdered(7,5,2020);
+            odr1.addDigitalVideoDisc(dvd1);
+            odr1.addDigitalVideoDisc(dvd2);
+
+            odr2.setDateOrdered(9,10,2020);
+            odr2.addDigitalVideoDisc(new_dvd1);
+            odr2.addDigitalVideoDisc(dvd2);
+
+            odr3.setDateOrdered(1,3,2021);
+            odr3.addDigitalVideoDisc(new_dvd2);
+            odr3.addDigitalVideoDisc(dvd3);
+
+            odr1.printOrder();
+            odr2.printOrder();
+            odr3.printOrder();
+        }
+
+        if(getNbOrder() >= MAX_LIMITED_ORDERED){
+            System.out.println("Cannot create another order!");
+        }
+        else{
+            Order odr5 = new Order();
+            odr5.addDigitalVideoDisc(new_dvd2);
+            odr5.printOrder();
+        }
 
 
 
