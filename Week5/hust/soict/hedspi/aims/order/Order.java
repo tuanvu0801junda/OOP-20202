@@ -149,13 +149,6 @@ public class Order {
     }
     // Return String better than S.OUT ! (for print FILE/BUFFER/USER INTERFACE) --> more OOP styled !
 
-    public String DVDLuckyDetails(DigitalVideoDisc di){
-        String DVDLucky = di.getTitle()+" - "+di.getCategory()+" - "+di.getDirector()+
-                " - "+di.getLength()+": "+di.getCost()+ " $\n";
-        return DVDLucky;
-    }
-
-
     public void printOrder(){
         System.out.println("\n***********************Order***********************");
         System.out.print("Date: "+dateOrdered.OrderDateToString());
@@ -164,12 +157,17 @@ public class Order {
         System.out.println("***************************************************\n");
     }
 
-
     public DigitalVideoDisc getALuckyDVDItem(){
         int rand = (int)(Math.random() * (getQtyOrdered()-1)) + 1;
         //int rand = (int)(Math.random() * (max-min)) + min;
         itemsOrdered[rand].setCost(0.0f);
         return itemsOrdered[rand];
+    }
+
+    public String DVDLuckyDetails(DigitalVideoDisc di){
+        String DVDLucky = di.getTitle()+" - "+di.getCategory()+" - "+di.getDirector()+
+                " - "+di.getLength()+": "+di.getCost()+ " $\n";
+        return DVDLucky;
     }
 
     public void printOrder(DigitalVideoDisc di){

@@ -1,4 +1,7 @@
 package hust.soict.hedspi.aims.disc;
+
+import java.util.Locale;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -40,22 +43,31 @@ public class DigitalVideoDisc {
 
     public boolean search(String title){
         //Không phân biệt chữ hoa chữ thường
+        int qty = -1, compare = 0;
         if(title.equals(getTitle())) return true;
+
         title = title.trim();
+        title = title.toLowerCase(Locale.ROOT);
+        String rootTitle = this.title.toLowerCase(Locale.ROOT);
+
         String[] rootToken = title.split(" ");
+        String[] compareToken = new String[rootToken.length];
+        String[] rootThisTitle = rootTitle.split(" ");
 
         for(String w : rootToken){
             w = w.trim();
-            System.out.println(w);
+            if(w.equals("")) continue;
+            else { compareToken[++qty] = w; }
         }
 
-        //for(String w1: rootToken){
-          //  System.out.println(w1);
-        //}
-        //System.out.println(title);
-        return true;
+        for(int i=0;i<rootThisTitle.length;i++){
+            for(int j=0;j<compareToken.length;j++){
+                if(rootThisTitle[i].equals(compareToken[j])) compare++;
+            }
+        }
 
-        //return false;
+        if(compare == rootThisTitle.length) return true;
+        else return false;
     }
 
 }
