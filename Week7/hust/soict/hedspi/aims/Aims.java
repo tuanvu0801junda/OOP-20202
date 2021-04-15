@@ -36,7 +36,9 @@ public class Aims {
                 case 2:
                     System.out.println("2. Add item to the order\n");
                     Media new_mdf = showMenuCreation();
-                    System.out.println(myorder.addMedia(new_mdf));
+                    if(new_mdf != null) {
+                        System.out.println(myorder.addMedia(new_mdf));
+                    }
                     break;
 
                 case 3:
@@ -100,18 +102,15 @@ public class Aims {
         switch (choice){
             case 1:
                 System.out.println("1. Create DigitalVideoDisc (DVD)");
-                DVDFactory dvdFactory = new DVDFactory();
-                return createItemFromConsole(dvdFactory);
+                return createItemFromConsole(new DVDFactory());
 
             case 2:
                 System.out.println("2. Create Compact Disc (CD)");
-                CDFactory cdFactory = new CDFactory();
-                return createItemFromConsole(cdFactory);
+                return createItemFromConsole(new CDFactory());
 
             case 3:
                 System.out.println("3. Create Book");
-                BookFactory bookFactory = new BookFactory();
-                return createItemFromConsole(bookFactory);
+                return createItemFromConsole(new BookFactory());
 
             default:
                 System.out.println("Entered number doesn't exist.");
